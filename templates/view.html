@@ -1,0 +1,14 @@
+{% extends "blog/index.html" %}
+
+
+{% block body_block %}
+<body>
+	<div class="container">
+		<h1>{{ title|safe}}</h1>
+
+		<p>{{ data|safe }}</p>
+
+<i>{{ author|safe }}</i>
+</div>
+</body>
+{% endblock %}

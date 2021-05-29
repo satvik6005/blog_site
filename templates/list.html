@@ -1,0 +1,120 @@
+{% extends "blog/index.html" %}
+
+
+{% block body_block %}
+
+
+<body>
+<div class="container">
+     <div class="row">
+{% for x, y, z in data %}
+
+    <div class="card border-dark mb-3 column col-sm-6 col-md-5">
+       
+        <div class="card-text">
+            <a href="/blog/view/{{ z }}" class="data-blog awesome"><h4>{{ x|safe|truncatechars:200 }}</h4></a>
+
+
+
+        <div class="author">
+{{ y }}
+        
+</div>
+    </div>
+</div>
+
+{% endfor %}
+     </div>
+</div>
+</body>
+<style>
+	.author
+    {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-style: italic;
+
+    }
+    .data-blog
+    {
+font-family: 'Lora', serif;
+    }
+    .data-blog
+    {
+    color: black;
+    }
+.card
+{
+width:17em;
+height: 7em;
+margin: 1em;
+}
+.awesome {
+color:#313131;
+      -webkit-animation:colorchange 20s infinite alternate;
+}
+@-webkit-keyframes colorchange {
+      0% {
+
+        color: blue;
+      }
+
+      10% {
+
+        color: #8e44ad;
+      }
+
+      20% {
+
+        color: #1abc9c;
+      }
+
+      30% {
+
+        color: #d35400;
+      }
+
+      40% {
+
+        color: blue;
+      }
+
+      50% {
+
+        color: #34495e;
+      }
+
+      60% {
+
+        color: blue;
+      }
+
+      70% {
+
+        color: #2980b9;
+      }
+      80% {
+
+        color: #f1c40f;
+      }
+
+      90% {
+
+        color: #2980b9;
+      }
+
+      100% {
+
+        color: pink;
+      }
+    }
+    .row
+    {
+    padding-left:100px;
+    }
+
+
+
+</style>
+
+{% endblock %}
